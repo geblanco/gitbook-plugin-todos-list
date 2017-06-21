@@ -1,0 +1,22 @@
+{
+  "name": "gitbook-plugin-todos-list",
+  "description": "A ToDo plugin for GitBook",
+  "main": "index.js",
+  "version": "0.0.1",
+  "engines": {
+    "gitbook": "*"
+  },
+  "homepage": "https://github.com/m0n0l0c0/gitbook-plugin-todos-list",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m0n0l0c0/gitbook-plugin-todos-list.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m0n0l0c0/gitbook-plugin-todos-list/issues"
+  },
+  "gitbook": {},
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1"
+  }
+}
