@@ -31,6 +31,14 @@ Then, to obtain a list of todos:
 {% todos %} {% endtodos %}
 ```
 
+To mark a todo as done:
+
+```
+{{ "Buy apples" | todo(true) }}
+```
+
+Then it will appear as ~~ToDo:= Buy apples~~ and checked in the list of todos
+
 I think is better to keep this list in a Todos.md file or something like that, but is up to you.
 
 ### Notes
