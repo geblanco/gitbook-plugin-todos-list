@@ -2,9 +2,10 @@
 
 const cheerio = require('cheerio')
 
-function parseTodo( key ){
-	todos.push({ text: key })
-	return `<span id="todo-${todos.length}">ToDo:= ${key}</span>`
+function parseTodo( key, done ){
+	todos.push({ text: key, state: !!done })
+	const preamble = (done !== undefined && !!done) ? '~~' : ''
+	return `<span id="todo-${todos.length}">${preamble}ToDo:= ${key}${preamble}</span>`
 }
 
 function parseTodoBlock(){
@@ -16,9 +17,11 @@ function parseTodoBlock(){
 	let result = '<table class="todos">'
 
 	todos.forEach(function( todo, index ){
-		result += `<tr><td><span class="todo-number">${index + 1}</span></td><td>`
-		result += `<a href="${todo.ref}">${todo.text}</a>`
-		result += '</td></tr>'
+		result += `<tr>`
+		result += `	<td><input type="checkbox" ${todo.state ? 'checked' : ''} readonly></td>`
+		result += `	<td><span class="todo-number">${index + 1}</span></td>`
+		result += `	<td><a href="${todo.ref}">${todo.text}</a></td>`
+		result += '</tr>'
 	})
 
 	result += '</table>'
