@@ -9,7 +9,6 @@ function parseTodo( key, done ){
 }
 
 function parseTodoBlock(){
-
 	if( todos.length === 0 ){
 		return '<h3>Great! No ToDos left!</h3>'
 	}
@@ -18,7 +17,7 @@ function parseTodoBlock(){
 
 	todos.forEach(function( todo, index ){
 		result += `<tr>`
-		result += `	<td><input type="checkbox" ${todo.state ? 'checked' : ''} readonly></td>`
+		result += `	<td><input type="checkbox" ${todo.state ? 'checked' : ''} disabled></td>`
 		result += `	<td><span class="todo-number">${index + 1}</span></td>`
 		result += `	<td><a href="${todo.ref}">${todo.text}</a></td>`
 		result += '</tr>'
